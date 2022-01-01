@@ -1,6 +1,10 @@
 .header {
+  padding: var(--space-14) 0;
 }
 
 .header__logo {
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.05rem;
   text-transform: lowercase;
 }

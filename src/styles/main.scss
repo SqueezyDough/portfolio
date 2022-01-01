@@ -5,10 +5,10 @@ html {
 }
 
 body {
-  color: $primary-violet-light;
-  background: $base-black;
+  color: var(--primary-violet-light);
+  background: var(--base-black);
 
-  font-family: $font-body;
-  font-size: $text-base;
-  font-weight: $font-regular;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--font-regular);
 }

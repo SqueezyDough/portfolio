@@ -1,8 +1,10 @@
-$base-white: #fff;
-$base-black: #000;
+:root {
+  --base-white: #fff;
+  --base-black: #000;
 
-$primary-violet: #ac8fff;
-$primary-violet-light: #e0dbff;
+  --primary-violet: #ac8fff;
+  --primary-violet-light: #e0dbff;
 
-$secondary-rich-black: #0a042a;
-$secondary-pink: #b83695;
+  --secondary-rich-black: #0a042a;
+  --secondary-pink: #b83695;
+}
