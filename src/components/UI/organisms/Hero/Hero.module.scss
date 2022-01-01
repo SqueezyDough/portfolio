@@ -1,0 +1,26 @@
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.title {
+  font-size: var(--text-3xl);
+  mix-blend-mode: hard-light;
+
+  span {
+    display: block;
+  }
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+.background-container__image {
+  min-height: 100vh;
+}

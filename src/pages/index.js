@@ -1,7 +1,7 @@
 import gql from 'graphql-tag'
 import client from '@/api/prismic-api'
 import Layout from '@/components/templates/Layout'
-import styles from './Index.module.scss'
+import Home from '@/components/templates/Home'
 
 const Index = ({ data }) => {
   const seo = {
@@ -10,12 +10,14 @@ const Index = ({ data }) => {
   }
 
   const {
-    homepage: { title },
+    homepage: { logo_title, title, background },
   } = data
 
+  const page_title = title[0].text
+
   return (
-    <Layout seo={seo} title={title}>
-      <main className={styles.main}>Main content</main>
+    <Layout seo={seo} title={logo_title}>
+      <Home data={{ page_title, background }} />
     </Layout>
   )
 }
@@ -27,7 +29,10 @@ export async function getStaticProps() {
     query: gql`
       {
         homepage(uid: "homepage", lang: "en-gb") {
+          logo_title
           title
+          background
+          intro
         }
       }
     `,
