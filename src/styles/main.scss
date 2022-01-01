@@ -1,0 +1,14 @@
+@import './base';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: $primary-violet-light;
+  background: $base-black;
+
+  font-family: $font-body;
+  font-size: $text-base;
+  font-weight: $font-regular;
+}
