@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: var(--space-14) 0;
+}
+
+.indicator {
+  height: 32px;
+  width: 20px;
+  border: 2px solid var(--primary-violet);
+  border-radius: 33px;
+}
+
+.indicator__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.indicator__wheel {
+  margin-top: 5px;
+  height: 10px;
+  width: 2px;
+  background-color: var(--primary-violet);
+  border-radius: 2px;
+}
+
+.indicator__scroll {
+  position: absolute;
+  height: 4px;
+  width: 4px;
+  background-color: var(--primary-violet);
+  border-radius: var(--rounded-full);
+}

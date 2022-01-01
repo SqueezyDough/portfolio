@@ -1,9 +1,15 @@
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import styles from './Hero.module.scss'
+import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 
 const Hero = ({ title, background }) => {
   const words = title.split(' ')
+  const { scrollYProgress } = useViewportScroll()
+  const slideRight = (index) => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    return useTransform(scrollYProgress, (value) => value * index, [0, 100])
+  }
 
   return (
     <section className={styles.hero}>
@@ -18,16 +24,17 @@ const Hero = ({ title, background }) => {
           <motion.span
             key={i}
             initial={{ opacity: 0 }}
-            animate={{ x: i * 15, opacity: 1 }}
+            animate={{ opacity: 1, paddingLeft: i * 15 }}
+            style={{ x: slideRight(i * 2) }}
             transition={{
-              ease: 'easeOut',
+              ease: 'easeInOut',
+              type: 'spring',
             }}
           >
             {word}
           </motion.span>
         ))}
       </motion.h1>
-
       {background && (
         <div className={styles['background-container']}>
           <Image
@@ -39,6 +46,7 @@ const Hero = ({ title, background }) => {
           />
         </div>
       )}
+      <ScrollIndicator />
     </section>
   )
 }
