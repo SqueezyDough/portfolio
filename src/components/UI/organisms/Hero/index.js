@@ -2,13 +2,13 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import styles from './Hero.module.scss'
 import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 import ImageCanvas from '@/UI/molecules/ImageCanvas'
+import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
 
 const Hero = ({ title, background }) => {
   const words = title.split(' ')
   const { scrollYProgress } = useViewportScroll()
 
   const multiplyScrollHeight = (index) => {
-    console.log(index)
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return useTransform(scrollYProgress, (value) => value * index)
   }
@@ -45,8 +45,15 @@ const Hero = ({ title, background }) => {
             duration: 1,
           }}
         >
-          <div className={`${styles['background-container']}`}>
-            <ImageCanvas className={styles['background-container__image']} source={background} />
+          <div className={styles.parallax}>
+            <ParallaxContainer>
+              <div className={styles['background-container']}>
+                <ImageCanvas
+                  className={styles['background-container__image']}
+                  source={background}
+                />
+              </div>
+            </ParallaxContainer>
           </div>
         </motion.div>
       )}

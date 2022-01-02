@@ -3,7 +3,7 @@
   justify-content: space-between;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 72px);
+  height: calc(100vh - 120px);
   overflow-x: hidden;
 }
 
@@ -19,6 +19,7 @@
   }
 }
 
+.parallax,
 .background-container {
   position: absolute;
   top: 0;
