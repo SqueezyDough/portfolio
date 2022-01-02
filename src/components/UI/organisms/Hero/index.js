@@ -36,9 +36,18 @@ const Hero = ({ title, background }) => {
         ))}
       </motion.h1>
       {background && (
-        <div className={`${styles['background-container']}`}>
-          <ImageCanvas className={styles['background-container__image']} source={background} />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, zIndex: -1 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            ease: 'easeOut',
+            duration: 1,
+          }}
+        >
+          <div className={`${styles['background-container']}`}>
+            <ImageCanvas className={styles['background-container__image']} source={background} />
+          </div>
+        </motion.div>
       )}
       <ScrollIndicator />
     </section>

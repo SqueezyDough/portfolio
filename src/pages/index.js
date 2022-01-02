@@ -10,14 +10,15 @@ const Index = ({ data }) => {
   }
 
   const {
-    homepage: { logo_title, title, background },
+    homepage: { logo_title, title, intro, background },
   } = data
 
   const page_title = title[0].text
+  const page_intro = intro[0].text
 
   return (
     <Layout seo={seo} title={logo_title}>
-      <Home data={{ page_title, background }} />
+      <Home data={{ page_title, background, page_intro }} />
     </Layout>
   )
 }

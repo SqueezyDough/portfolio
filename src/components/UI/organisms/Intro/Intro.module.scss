@@ -1,0 +1,16 @@
+.intro {
+  padding: var(--space-30) 0;
+}
+
+.intro__text {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--secondary-pink);
+  background: url('../../../assets/images/text-bg.jpeg');
+  background-attachment: fixed;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
