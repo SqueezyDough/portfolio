@@ -10,7 +10,7 @@ const ImageMaterial = ({ source }) => {
   const texture = useLoader(THREE.TextureLoader, source.url)
 
   const resolution = useMemo(() => {
-    return new THREE.Vector2(window.innerWidth, window.innerHeight)
+    return new THREE.Vector2(source.dimensions.width, source.dimensions.height)
   }, [])
 
   useFrame(({ mouse }, delta) => {
@@ -19,13 +19,12 @@ const ImageMaterial = ({ source }) => {
   })
 
   return (
-    <mesh ref={ref}>
-      <planeBufferGeometry attach="geometry" args={[4, 10, 128, 128]}></planeBufferGeometry>
+    <mesh ref={ref} position={[0, 0, 0]}>
+      <planeBufferGeometry attach="geometry" args={[3, 8, 128, 128]}></planeBufferGeometry>
       <basicMaterial
         uTexture={texture}
         uResolution={resolution}
         attach="material"
-        side={THREE.DoubleSide}
         transparent
       ></basicMaterial>
     </mesh>
