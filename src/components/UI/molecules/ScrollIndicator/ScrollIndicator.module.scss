@@ -2,5 +2,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: var(--space-14) 0;
+  padding: var(--space-24) 0;
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  letter-spacing: 0.02rem;
+  text-transform: lowercase;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

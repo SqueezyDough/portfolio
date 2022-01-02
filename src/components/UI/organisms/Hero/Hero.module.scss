@@ -9,14 +9,18 @@
 
 .title {
   padding: var(--space-24) 0;
+}
+
+.title__word {
+  display: block;
 
   font-size: var(--text-3xl);
   letter-spacing: 0.06rem;
+  color: var(--primary-violet-light);
   mix-blend-mode: hard-light;
 
-  span {
-    display: block;
-  }
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .parallax,

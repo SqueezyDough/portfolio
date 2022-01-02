@@ -25,6 +25,7 @@ const Hero = ({ title, background }) => {
         {words.map((word, i) => (
           <motion.span
             key={i}
+            className={styles['title__word']}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, paddingLeft: i * 15 }}
             style={{ x: multiplyScrollHeight(i * 40) }}
