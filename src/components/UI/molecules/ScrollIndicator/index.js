@@ -6,8 +6,6 @@ import useWindowOffset from '../../../hooks/useWindowOffset'
 const ScrollIndicator = ({ label = 'scroll' }) => {
   const offset = useWindowOffset()
 
-  console.log(offset)
-
   return (
     <motion.div animate={offset > 0 ? { opacity: 0 } : { opacity: 1 }}>
       <motion.div

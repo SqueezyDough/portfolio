@@ -6,9 +6,11 @@ import ImageCanvas from '@/UI/molecules/ImageCanvas'
 const Hero = ({ title, background }) => {
   const words = title.split(' ')
   const { scrollYProgress } = useViewportScroll()
-  const slideRight = (index) => {
+
+  const multiplyScrollHeight = (index) => {
+    console.log(index)
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    return useTransform(scrollYProgress, (value) => value * index, [0, 100])
+    return useTransform(scrollYProgress, (value) => value * index)
   }
 
   return (
@@ -25,10 +27,9 @@ const Hero = ({ title, background }) => {
             key={i}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, paddingLeft: i * 15 }}
-            style={{ x: slideRight(i * 2) }}
+            style={{ x: multiplyScrollHeight(i * 40) }}
             transition={{
-              ease: 'easeInOut',
-              type: 'spring',
+              ease: 'easeOut',
             }}
           >
             {word}

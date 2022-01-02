@@ -8,7 +8,7 @@ const Intro = ({ text }) => {
   })
 
   return (
-    <motion.div
+    <motion.section
       ref={ref}
       animate={inView ? { opacity: 1 } : { opacity: 0 }}
       transition={{
@@ -30,7 +30,7 @@ const Intro = ({ text }) => {
       >
         {text}
       </motion.p>
-    </motion.div>
+    </motion.section>
   )
 }
 
