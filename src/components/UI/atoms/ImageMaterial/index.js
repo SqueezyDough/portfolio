@@ -11,7 +11,7 @@ const ImageMaterial = ({ source }) => {
 
   const resolution = useMemo(() => {
     return new THREE.Vector2(source.dimensions.width, source.dimensions.height)
-  }, [])
+  }, [source])
 
   useFrame(({ mouse }, delta) => {
     ref.current.material.uMouse = mouse
