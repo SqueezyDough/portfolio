@@ -1,7 +1,7 @@
-import Image from 'next/image'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import styles from './Hero.module.scss'
 import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
+import ImageCanvas from '@/UI/molecules/ImageCanvas'
 
 const Hero = ({ title, background }) => {
   const words = title.split(' ')
@@ -36,14 +36,8 @@ const Hero = ({ title, background }) => {
         ))}
       </motion.h1>
       {background && (
-        <div className={styles['background-container']}>
-          <Image
-            className={styles['background-container__image']}
-            src={background.url}
-            alt={background.alt}
-            width={background.dimensions.width}
-            height={background.dimensions.height}
-          />
+        <div className={`${styles['background-container']}`}>
+          <ImageCanvas className={styles['background-container__image']} source={background} />
         </div>
       )}
       <ScrollIndicator />
