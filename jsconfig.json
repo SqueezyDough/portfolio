@@ -8,7 +8,7 @@
       "@/api/*": ["pages/api/*"],
       "@/utils/*": ["utils/*"],
       "@/images/*": ["components/assets/images/*"],
-      "@/gl/*": ["components/gl/*"]
+      "@/hooks/*": ["components/hooks/*"]
     }
   }
 }

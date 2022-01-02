@@ -20,7 +20,7 @@ const ImageMaterial = ({ source }) => {
 
   return (
     <mesh ref={ref} position={[0, 0, 0]}>
-      <planeBufferGeometry attach="geometry" args={[3, 8, 128, 128]}></planeBufferGeometry>
+      <planeBufferGeometry attach="geometry" args={[3, 7.9, 128, 128]}></planeBufferGeometry>
       <basicMaterial
         uTexture={texture}
         uResolution={resolution}

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import ScrollIcon from '@/UI/atoms/ScrollIcon'
+import useWindowOffset from '@/hooks/useWindowOffset'
 import styles from './ScrollIndicator.module.scss'
-import useWindowOffset from '../../../hooks/useWindowOffset'
 
 const ScrollIndicator = ({ label = 'scroll' }) => {
   const offset = useWindowOffset()
