@@ -31,8 +31,8 @@ const Intro = ({ text }) => {
               <motion.p
                 className={styles['intro__text']}
                 animate={{
-                  backgroundPositionX: ['55%', '95%'],
-                  backgroundPositionY: ['70%', '85%'],
+                  backgroundPositionX: ['15%', '95%'],
+                  backgroundPositionY: ['2%', '60%'],
                 }}
                 transition={{
                   repeat: Infinity,
