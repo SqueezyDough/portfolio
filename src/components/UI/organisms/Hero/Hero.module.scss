@@ -16,13 +16,13 @@
 
   font-size: $text-3xl;
   letter-spacing: 0.06rem;
-  color: $primary-violet;
+  color: $primary-violet-light;
 }
 
 .parallax,
 .background-container {
   position: absolute;
-  top: 0;
+  top: -1rem;
   right: 0;
   height: 120vh;
   width: 100%;

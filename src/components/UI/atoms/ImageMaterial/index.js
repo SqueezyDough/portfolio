@@ -24,7 +24,7 @@ const ImageMaterial = ({ source }) => {
       <planeBufferGeometry
         attach="geometry"
         // add .5 to make image border not visible
-        args={[viewport.width + 0.5, viewport.height + 0.5, 128, 128]}
+        args={[viewport.width + 0.5, viewport.height, 24, 24]}
       ></planeBufferGeometry>
       <basicMaterial
         uTexture={texture}

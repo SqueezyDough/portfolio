@@ -7,11 +7,7 @@ export const ImageCanvas = ({ source }) => {
   const { background_mobile, background_desktop } = source
 
   return (
-    <Canvas
-      onCreated={({ gl }) => {
-        gl.setClearColor('#202023')
-      }}
-    >
+    <Canvas>
       <ambientLight castShadow></ambientLight>
       <spotLight intensity={1} position={[10, 1, 10]} castShadow></spotLight>
       <Suspense fallback={null}>
