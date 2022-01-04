@@ -35,10 +35,14 @@
   height: 100vh;
 }
 
-@media (min-width: 768px) {
+@include screen($breakpoint-regular) {
   .parallax,
   .background-container {
     height: 90vh;
     width: 80%;
+  }
+
+  .title__word {
+    font-size: $text-5xl;
   }
 }

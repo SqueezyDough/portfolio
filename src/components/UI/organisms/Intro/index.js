@@ -8,7 +8,6 @@ const Intro = ({ text }) => {
   })
 
   const containerClasses = `${styles.intro} content`
-  const containerInnerClasses = `${styles['intro__text']} content__inner`
 
   return (
     <motion.section
@@ -20,21 +19,23 @@ const Intro = ({ text }) => {
       }}
       className={containerClasses}
     >
-      {/* TODO: enable background texture for desktop */}
-      <motion.p
-        className={containerInnerClasses}
-        // animate={{
-        //   backgroundPositionX: ['15%', '55%'],
-        //   backgroundPositionY: ['50%', '55%'],
-        // }}
-        // transition={{
-        //   repeat: Infinity,
-        //   repeatType: 'reverse',
-        //   duration: 25,
-        // }}
-      >
-        {text}
-      </motion.p>
+      <div className="content__inner">
+        {/* TODO: enable background texture for desktop */}
+        <motion.p
+          className={styles['intro__text']}
+          // animate={{
+          //   backgroundPositionX: ['15%', '55%'],
+          //   backgroundPositionY: ['50%', '55%'],
+          // }}
+          // transition={{
+          //   repeat: Infinity,
+          //   repeatType: 'reverse',
+          //   duration: 25,
+          // }}
+        >
+          {text}
+        </motion.p>
+      </div>
     </motion.section>
   )
 }

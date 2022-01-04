@@ -1,6 +1,6 @@
 .intro {
   padding: $space-28 0;
-  max-width: 348px;
+  margin: 0;
 
   font-size: $text-2xl;
   font-weight: $font-black;
@@ -12,4 +12,12 @@
   // background-attachment: fixed;
   // -webkit-text-fill-color: transparent;
   // -webkit-background-clip: text;;
+}
+
+@include screen($breakpoint-regular) {
+  .intro {
+    max-width: 500px;
+
+    font-size: $text-4xl;
+  }
 }

@@ -47,6 +47,7 @@ const Hero = ({ title, images }) => {
           transition={{
             ease: 'easeOut',
             duration: 1,
+            delay: 1,
           }}
         >
           <div className={styles.parallax}>

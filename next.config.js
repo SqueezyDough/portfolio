@@ -5,6 +5,7 @@ const defaultSassOptions = {
       @import "styles/core/fonts.scss";
       @import "styles/core/spacings.scss";
       @import "styles/core/radiuses.scss";
+      @import "styles/core/breakpoints.scss";
       @import "styles/core/functions.scss";
       @import "styles/core/mixins.scss";
       @import "styles/core/colors.scss";
