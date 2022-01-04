@@ -7,6 +7,15 @@
   color: $primary-violet;
 }
 
+.eyebrow {
+  display: block;
+  margin: $space-4 0;
+
+  font-weight: $font-black;
+  font-size: $text-sm;
+  color: $primary-violet-light;
+}
+
 @include screen($breakpoint-regular) {
   .intro {
     max-width: 500px;
@@ -19,5 +28,9 @@
     background-attachment: fixed;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+  }
+
+  .eyebrow {
+    font-size: $text-lg;
   }
 }

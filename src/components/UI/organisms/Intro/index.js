@@ -21,6 +21,7 @@ const Intro = ({ text }) => {
       className={containerClasses}
     >
       <div className="content__inner">
+        <span className={styles.eyebrow}>Eyebrow</span>
         {/* TODO: enable background texture for desktop */}
         <Media queries={{ small: { maxWidth: 768 } }}>
           {(matches) =>
