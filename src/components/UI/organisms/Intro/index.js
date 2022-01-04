@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import Media from 'react-media'
 import styles from './Intro.module.scss'
 
 const Intro = ({ text }) => {
@@ -21,20 +22,28 @@ const Intro = ({ text }) => {
     >
       <div className="content__inner">
         {/* TODO: enable background texture for desktop */}
-        <motion.p
-          className={styles['intro__text']}
-          // animate={{
-          //   backgroundPositionX: ['15%', '55%'],
-          //   backgroundPositionY: ['50%', '55%'],
-          // }}
-          // transition={{
-          //   repeat: Infinity,
-          //   repeatType: 'reverse',
-          //   duration: 25,
-          // }}
-        >
-          {text}
-        </motion.p>
+        <Media queries={{ small: { maxWidth: 768 } }}>
+          {(matches) =>
+            matches.small ? (
+              <p className={styles['intro__text']}>{text}</p>
+            ) : (
+              <motion.p
+                className={styles['intro__text']}
+                animate={{
+                  backgroundPositionX: ['55%', '95%'],
+                  backgroundPositionY: ['70%', '85%'],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                  duration: 20,
+                }}
+              >
+                {text}
+              </motion.p>
+            )
+          }
+        </Media>
       </div>
     </motion.section>
   )
