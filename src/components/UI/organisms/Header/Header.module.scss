@@ -9,3 +9,9 @@
   letter-spacing: 0.02rem;
   text-transform: lowercase;
 }
+
+@include screen($breakpoint-regular) {
+  .header__logo {
+    font-size: $text-lg;
+  }
+}

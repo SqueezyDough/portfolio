@@ -11,3 +11,9 @@
   letter-spacing: 0.02rem;
   text-transform: lowercase;
 }
+
+@include screen($breakpoint-regular) {
+  .label {
+    font-size: $text-lg;
+  }
+}
