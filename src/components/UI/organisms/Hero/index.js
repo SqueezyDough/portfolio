@@ -32,6 +32,7 @@ const Hero = ({ title, images }) => {
               style={{ x: multiplyScrollHeight(i * 40) }}
               transition={{
                 ease: 'easeOut',
+                delay: 0.75,
               }}
             >
               {word}
