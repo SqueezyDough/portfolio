@@ -16,6 +16,7 @@ const ScrollIndicator = ({ label = 'scroll' }) => {
       >
         <span className={styles.label}>{label}</span>
 
+        {/* TODO: replace with a swipe icon and label for mobile */}
         <ScrollIcon />
       </motion.div>
     </motion.div>

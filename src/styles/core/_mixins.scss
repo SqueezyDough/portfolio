@@ -1,0 +1,15 @@
+@mixin text-rendering {
+  font-weight: normal;
+  font-smooth: always;
+
+  -webkit-font-smoothing: antialiased;
+  -khtml-font-smoothing: antialiased;
+  -apple-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin screen($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}

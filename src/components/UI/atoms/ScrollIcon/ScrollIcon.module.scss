@@ -1,7 +1,7 @@
 .indicator {
   height: 32px;
   width: 20px;
-  border: 2px solid var(--primary-violet);
+  border: 2px solid $primary-violet;
   border-radius: 33px;
 }
 
@@ -16,7 +16,7 @@
   margin-top: 5px;
   height: 10px;
   width: 2px;
-  background-color: var(--primary-violet);
+  background-color: $primary-violet;
   border-radius: 2px;
 }
 
@@ -24,6 +24,6 @@
   position: absolute;
   height: 4px;
   width: 4px;
-  background-color: var(--primary-violet);
-  border-radius: var(--rounded-full);
+  background-color: $primary-violet;
+  border-radius: $rounded-full;
 }

@@ -1,18 +1,14 @@
 .intro {
-  padding: var(--space-28) 0;
+  padding: $space-28 0;
 
-  font-size: var(--text-2xl);
-  font-weight: var(--font-black);
-  color: var(--primary-violet-light);
-  mix-blend-mode: hard-light;
+  font-size: $text-2xl;
+  font-weight: $font-black;
+  color: $primary-violet;
 }
 
 .intro__text {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
   // background: url('../../../assets/images/text-bg.jpeg');
   // background-attachment: fixed;
   // -webkit-text-fill-color: transparent;
-  // -webkit-background-clip: text;
+  // -webkit-background-clip: text;;
 }

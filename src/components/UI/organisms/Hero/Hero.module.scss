@@ -8,19 +8,15 @@
 }
 
 .title {
-  padding: var(--space-24) 0;
+  padding: $space-24 0;
 }
 
 .title__word {
   display: block;
 
-  font-size: var(--text-3xl);
+  font-size: $text-3xl;
   letter-spacing: 0.06rem;
-  color: var(--primary-violet-light);
-  mix-blend-mode: hard-light;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  color: $primary-violet;
 }
 
 .parallax,
@@ -30,8 +26,17 @@
   right: 0;
   height: 120vh;
   width: 100%;
+  max-width: 1200px;
 }
 
 .background-container__image {
   height: 100vh;
+}
+
+@media (min-width: 768px) {
+  .parallax,
+  .background-container {
+    height: 90vh;
+    width: 80%;
+  }
 }

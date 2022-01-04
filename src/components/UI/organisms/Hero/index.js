@@ -4,7 +4,7 @@ import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 import ImageCanvas from '@/UI/molecules/ImageCanvas'
 import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
 
-const Hero = ({ title, background }) => {
+const Hero = ({ title, images }) => {
   const words = title.split(' ')
   const { scrollYProgress } = useViewportScroll()
 
@@ -37,7 +37,7 @@ const Hero = ({ title, background }) => {
           </motion.span>
         ))}
       </motion.h1>
-      {background && (
+      {images && (
         <motion.div
           initial={{ opacity: 0, zIndex: -1 }}
           animate={{ opacity: 1 }}
@@ -49,10 +49,7 @@ const Hero = ({ title, background }) => {
           <div className={styles.parallax}>
             <ParallaxContainer>
               <div className={styles['background-container']}>
-                <ImageCanvas
-                  className={styles['background-container__image']}
-                  source={background}
-                />
+                <ImageCanvas className={styles['background-container__image']} source={images} />
               </div>
             </ParallaxContainer>
           </div>

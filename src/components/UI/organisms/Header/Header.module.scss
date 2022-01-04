@@ -1,12 +1,10 @@
 .header {
-  padding: var(--space-12) 0;
+  padding: $space-12 0;
 }
 
 .header__logo {
-  font-size: var(--text-sm);
-  font-weight: var(--font-bold);
+  font-size: $text-sm;
+  font-weight: $font-bold;
   letter-spacing: 0.02rem;
   text-transform: lowercase;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }

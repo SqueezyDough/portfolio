@@ -10,15 +10,17 @@ const Index = ({ data }) => {
   }
 
   const {
-    homepage: { logo_title, title, intro, background },
+    homepage: { logo_title, title, intro, background_mobile, background_desktop },
   } = data
 
   const page_title = title[0].text
   const page_intro = intro[0].text
+  const images = { background_mobile, background_desktop }
 
   return (
     <Layout seo={seo} title={logo_title}>
-      <Home data={{ page_title, background, page_intro }} />
+      {/* TODO: make page transition using (currently active?) affinity graphic */}
+      <Home data={{ page_title, images, page_intro }} />
     </Layout>
   )
 }
@@ -32,7 +34,8 @@ export async function getStaticProps() {
         homepage(uid: "homepage", lang: "en-gb") {
           logo_title
           title
-          background
+          background_mobile
+          background_desktop
           intro
         }
       }
