@@ -15,28 +15,31 @@ const Hero = ({ title, images }) => {
 
   return (
     <section className={styles.hero}>
-      <motion.h1
-        className={styles.title}
-        transition={{
-          staggerChildren: 0.3,
-          delayChildren: 1,
-        }}
-      >
-        {words.map((word, i) => (
-          <motion.span
-            key={i}
-            className={styles['title__word']}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, paddingLeft: i * 15 }}
-            style={{ x: multiplyScrollHeight(i * 40) }}
-            transition={{
-              ease: 'easeOut',
-            }}
-          >
-            {word}
-          </motion.span>
-        ))}
-      </motion.h1>
+      <div className="content__inner">
+        <motion.h1
+          className={styles.title}
+          transition={{
+            staggerChildren: 0.3,
+            delayChildren: 1,
+          }}
+        >
+          {words.map((word, i) => (
+            <motion.span
+              key={i}
+              className={styles['title__word']}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, paddingLeft: i * 15 }}
+              style={{ x: multiplyScrollHeight(i * 40) }}
+              transition={{
+                ease: 'easeOut',
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
+        </motion.h1>
+      </div>
+
       {images && (
         <motion.div
           initial={{ opacity: 0, zIndex: -1 }}
@@ -55,7 +58,10 @@ const Hero = ({ title, images }) => {
           </div>
         </motion.div>
       )}
-      <ScrollIndicator />
+
+      <div className="content__inner">
+        <ScrollIndicator />
+      </div>
     </section>
   )
 }

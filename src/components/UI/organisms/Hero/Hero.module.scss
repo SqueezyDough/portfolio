@@ -2,13 +2,14 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  position: relative;
   width: 100%;
   height: calc(100vh - 120px);
-  overflow-x: hidden;
+  overflow: visible;
 }
 
 .title {
-  padding: $space-24 0;
+  padding: $space-28 0;
 }
 
 .title__word {
