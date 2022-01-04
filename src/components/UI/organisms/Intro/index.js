@@ -7,6 +7,9 @@ const Intro = ({ text }) => {
     threshold: 0.85,
   })
 
+  const containerClasses = `${styles.intro} content`
+  const containerInnerClasses = `${styles['intro__text']} content__inner`
+
   return (
     <motion.section
       ref={ref}
@@ -15,11 +18,11 @@ const Intro = ({ text }) => {
         duration: 1,
         ease: 'easeOut',
       }}
-      className={styles.intro}
+      className={containerClasses}
     >
       {/* TODO: enable background texture for desktop */}
       <motion.p
-        className={styles['intro__text']}
+        className={containerInnerClasses}
         // animate={{
         //   backgroundPositionX: ['15%', '55%'],
         //   backgroundPositionY: ['50%', '55%'],
