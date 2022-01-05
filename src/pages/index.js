@@ -10,12 +10,25 @@ const Index = ({ data }) => {
   }
 
   const {
-    homepage: { logo_title, title, intro, background_mobile, background_desktop },
+    homepage: {
+      logo_title,
+      title,
+      intro,
+      background_mobile,
+      background_desktop,
+      background_planetary_1,
+      background_planetary_2,
+    },
   } = data
 
   const page_title = title[0].text
   const page_intro = intro[0].text
-  const images = { background_mobile, background_desktop }
+  const images = {
+    background_mobile,
+    background_desktop,
+    background_planetary_1,
+    background_planetary_2,
+  }
 
   return (
     <Layout seo={seo} title={logo_title}>
@@ -37,6 +50,8 @@ export async function getStaticProps() {
           background_mobile
           background_desktop
           intro
+          background_planetary_1
+          background_planetary_2
         }
       }
     `,

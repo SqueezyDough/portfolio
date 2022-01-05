@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  max-height: 120vh;
+}
+
+.skills {
+  min-height: 100vh;
+}
+
+.video {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  transform: translateY(-100%);
+
+  z-index: -1;
+}
+
+.video__inner {
+  width: 100%;
+  height: 120vh;
+  object-fit: fill;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container__shadow {
+  width: 120%;
+  height: 120vh;
+  position: absolute;
+  top: 0;
+  left: -10%;
+
+  box-shadow: inset 0 0 200px 250px $base-black;
+}
+
+.planetary {
+  position: absolute;
+  top: 0;
+  left: -600px;
+  width: 75%;
+}
+
+.planetary__image {
+  width: 100%;
+  height: 100%;
+}
