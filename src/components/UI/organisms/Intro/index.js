@@ -32,7 +32,7 @@ const Intro = ({ text }) => {
                 className={styles['intro__text']}
                 animate={{
                   backgroundPositionX: ['15%', '95%'],
-                  backgroundPositionY: ['10%', '60%'],
+                  backgroundPositionY: ['40%', '80%'],
                 }}
                 transition={{
                   repeat: Infinity,
