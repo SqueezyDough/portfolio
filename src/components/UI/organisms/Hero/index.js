@@ -52,7 +52,7 @@ const Hero = ({ title, images }) => {
           }}
         >
           <div className={styles.parallax}>
-            <ParallaxContainer>
+            <ParallaxContainer inputRange={1400} outputRange={300}>
               <div className={styles['background-container']}>
                 <ImageCanvas className={styles['background-container__image']} source={images} />
               </div>

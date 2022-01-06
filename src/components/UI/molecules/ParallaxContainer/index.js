@@ -1,6 +1,6 @@
 import { useViewportScroll, motion, useTransform } from 'framer-motion'
 
-const ParallaxContainer = ({ children, inputRange = 1000, outputRange = 200 }) => {
+const ParallaxContainer = ({ children, inputRange = 500, outputRange = 200 }) => {
   const { scrollY } = useViewportScroll()
   const y = useTransform(scrollY, [0, inputRange], [0, outputRange])
 
