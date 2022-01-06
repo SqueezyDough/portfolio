@@ -22,8 +22,8 @@ const Skills = ({ image }) => {
       <VideoBackground url="/assets/media/Mercury-12_dark swirls.mp4" />
 
       <ParallaxContainer inputRange={2400} outputRange={500}>
-        <div className={`${styles.skills} content__inner`}>
-          <div className={styles['skills__inner']}>
+        <div className={`${styles.skills} content`}>
+          <div className={`${styles['skills__inner']} content__inner`}>
             <h2 className={styles['skills__heading']}>
               <span>Skills</span>
               <span>Skills</span>
