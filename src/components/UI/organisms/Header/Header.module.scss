@@ -6,8 +6,6 @@
     width: 100%;
     padding-top: $space-12;
 
-    text-align: center;
-
     // mix-blend-mode: difference;
 }
 
@@ -23,6 +21,11 @@
 
 @include screen($breakpoint-regular)
 {
+    .header
+    {
+        text-align: center;
+    }
+
     .logo
     {
         font-size: $text-lg;
