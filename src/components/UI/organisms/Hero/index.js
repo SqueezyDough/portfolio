@@ -23,7 +23,7 @@ const Hero = ({ title, images }) => {
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>
 
-      <ParallaxContainer inputRange={500} outputRange={-75}>
+      <ParallaxContainer inputRange={500} outputRange={-100}>
         <motion.h1 className={styles.title}>
           {words.map((word, i) => (
             <div key={i} className={styles.wordWrapper}>
