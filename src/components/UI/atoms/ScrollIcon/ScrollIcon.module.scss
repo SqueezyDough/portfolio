@@ -1,29 +1,30 @@
-.indicator {
-  height: 32px;
-  width: 20px;
-  border: 1px solid $primary-violet;
-  border-radius: 33px;
+.indicator
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
 }
 
-.indicator__inner {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.indicatorLine
+{
+    position: relative;
+
+    width: 2px;
+    height: 1rem;
+
+    border-radius: 2px;
+    background-color: $base-white;
 }
 
-.indicator__wheel {
-  margin-top: 5px;
-  height: 10px;
-  width: 2px;
-  background-color: $primary-violet;
-  border-radius: 2px;
-}
+.indicatorScroll
+{
+    position: absolute;
 
-.indicator__scroll {
-  position: absolute;
-  height: 4px;
-  width: 4px;
-  background-color: $primary-violet;
-  border-radius: $rounded-full;
+    width: 6px;
+    height: 6px;
+
+    border-radius: $rounded-full;
+    background-color: $base-white;
 }

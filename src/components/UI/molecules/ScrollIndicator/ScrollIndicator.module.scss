@@ -1,18 +1,23 @@
-.container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: $space-24 0;
+.container
+{
+    display: flex;
+    align-items: center;
+
+    padding: $space-24 0;
 }
 
-.label {
-  @extend .typography-small-text;
+.label
+{
+    transform: rotate(270deg);
+    text-transform: lowercase;
 
-  text-transform: lowercase;
+    @extend .typography-small-text;
 }
 
-@include screen($breakpoint-regular) {
-  .label {
-    font-size: $text-lg;
-  }
+@include screen($breakpoint-regular)
+{
+    .label
+    {
+        font-size: $text-lg;
+    }
 }

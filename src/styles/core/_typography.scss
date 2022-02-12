@@ -1,8 +1,8 @@
 .typography-heading
 {
-    font-size: $text-6xl;
+    font-size: $text-5xl;
     font-weight: 200;
-    line-height: 8.5rem;
+    line-height: 2.5rem;
 
     letter-spacing: .4rem;
     text-transform: uppercase;
@@ -26,4 +26,13 @@
 {
     font-size: $text-sm;
     font-weight: normal;
+}
+
+@include screen($breakpoint-regular)
+{
+    .typography-heading
+    {
+        font-size: $text-6xl;
+        line-height: 8.5rem;
+    }
 }

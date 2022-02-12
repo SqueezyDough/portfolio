@@ -5,7 +5,7 @@ import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
 import ImageDistorted from '@/UI/molecules/ImageDistorted'
 import Spheres from '@/UI/molecules/Spheres'
 import styles from './Hero.module.scss'
-// import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
+import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 
 // import { easeOutSine } from '@/ease'
 
@@ -27,7 +27,11 @@ const Hero = ({ title, images }) => {
         <motion.h1 className={styles.title}>
           {words.map((word, i) => (
             <div key={i} className={styles.wordWrapper}>
-              <motion.span className={styles.word} initial={{ y: 200 }} animate={{ y: 0 }}>
+              <motion.span
+                className={styles.word}
+                initial={{ yPercent: 100 }}
+                animate={{ yPercent: 0 }}
+              >
                 {word}
               </motion.span>
             </div>
@@ -39,10 +43,10 @@ const Hero = ({ title, images }) => {
         <ImageDistorted image={images[0]} />
       </div>
 
-      {/* <footer className={styles.footer}>
+      <footer className={styles.footer}>
         <ScrollIndicator />
-        <nav>
-          <h3>
+        <nav className={styles.footerContent}>
+          <h3 className={styles.footerTitle}>
             <span>Designed & developer By</span>
             <span>leroyvanbiljouw</span>
           </h3>
@@ -53,7 +57,7 @@ const Hero = ({ title, images }) => {
             </li>
           </ul>
         </nav>
-      </footer> */}
+      </footer>
     </section>
   )
 }
