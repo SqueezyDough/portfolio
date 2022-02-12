@@ -10,8 +10,6 @@ const Index = ({ data }) => {
     seo_description: 'Homepage',
   }
 
-  console.log(data)
-
   return (
     <Layout title={logo} seo={seo}>
       <Home data={data} />

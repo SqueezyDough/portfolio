@@ -1,65 +1,43 @@
-import { useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion'
+import { motion } from 'framer-motion'
+import _ from 'lodash'
 // import { Canvas, useFrame } from '@react-three/fiber'
+import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
 import ImageDistorted from '@/UI/molecules/ImageDistorted'
 import Spheres from '@/UI/molecules/Spheres'
 import styles from './Hero.module.scss'
 // import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
-// import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
-import { easeOutSine } from '@/ease'
+
+// import { easeOutSine } from '@/ease'
 
 const Hero = ({ title, images }) => {
-  const slideInAnimation = useAnimation()
-
-  const words = title.split(' ')
-
-  console.log(words)
-
-  const initialHeadingPositions = {
-    0: { y: -50 },
-    1: { y: -50 },
-    2: { y: 50 },
-  }
-
-  useEffect(() => {
-    slideInAnimation.start((i) => slideIn(i))
-  }, [slideInAnimation])
-
-  const slideIn = (i) => {
-    return {
-      x: i === 2 ? -200 : 0,
-      letterSpacing: 0.2,
-      transition: { delay: 0.3, duration: 1.5, ease: easeOutSine },
-    }
-  }
+  const words = _.split(title, ' ')
 
   return (
     <section className={styles.hero}>
-      {/* <ParallaxContainer inputRange={1400} outputRange={300}> */}
-
-      <div className={styles.spheresContainer}>
+      <motion.div
+        className={styles.spheresContainer}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+      >
         <Spheres className={styles.spheres} texture={images[1]} />
+      </motion.div>
+
+      <ParallaxContainer inputRange={500} outputRange={-75}>
+        <motion.h1 className={styles.title}>
+          {words.map((word, i) => (
+            <div key={i} className={styles.wordWrapper}>
+              <motion.span className={styles.word} initial={{ y: 200 }} animate={{ y: 0 }}>
+                {word}
+              </motion.span>
+            </div>
+          ))}
+        </motion.h1>
+      </ParallaxContainer>
+
+      <div className={styles.canvas}>
+        <ImageDistorted image={images[0]} />
       </div>
-
-      {/* </ParallaxContainer> */}
-
-      <h1 className={styles.title}>
-        {words.map((word, i) => (
-          <motion.div
-            key={i}
-            className={styles.titleInner}
-            // custom={i}
-            initial={initialHeadingPositions[i]}
-            // animate={slideInAnimation}
-          >
-            {word}
-          </motion.div>
-        ))}
-
-        <div className={styles.canvas}>
-          <ImageDistorted image={images[0]} />
-        </div>
-      </h1>
 
       {/* <footer className={styles.footer}>
         <ScrollIndicator />

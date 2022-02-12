@@ -9,7 +9,7 @@ function MainSphere({ material }) {
 
   // main sphere rotates following the mouse position
   useFrame(({ clock, mouse }) => {
-    main.current.rotation.z = clock.getElapsedTime()
+    main.current.rotation.z = clock.getElapsedTime() / 2
     main.current.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.05)
     main.current.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.05)
   })
@@ -74,7 +74,7 @@ function Scene({ texture }) {
         bumpMap={bumpMap}
         color={'#010101'}
         roughness={0.25}
-        metalness={2}
+        metalness={3.2}
         bumpScale={0.005}
         clearcoat={1}
         clearcoatRoughness={1}
@@ -101,13 +101,13 @@ export default function Spheres({ className, texture }) {
       }}
     >
       <color attach="background" args={['#030303']} />
-      <fog color="#161616" attach="fog" near={8} far={30} />
+      <fog color="#161616" attach="fog" near={8} far={60} />
       <Suspense fallback={null}>
         <Scene texture={texture} />
       </Suspense>
       <EffectComposer multisampling={0} disableNormalPass={true}>
         <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} height={480} />
-        <Bloom luminanceThreshold={0} luminanceSmoothing={0.5} height={300} opacity={3} />
+        <Bloom luminanceThreshold={0} luminanceSmoothing={0.9} height={300} opacity={3} />
         <Noise opacity={0.02} />
         <Vignette eskil={false} offset={0.1} darkness={1.2} />
       </EffectComposer>
