@@ -3,6 +3,7 @@ const defaultSassOptions = {
   includePaths: [path.join(__dirname, 'styles')],
   prependData: `
       @import "styles/core/fonts.scss";
+      @import "styles/core/typography.scss";
       @import "styles/core/spacings.scss";
       @import "styles/core/radiuses.scss";
       @import "styles/core/breakpoints.scss";

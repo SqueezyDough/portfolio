@@ -23,6 +23,8 @@ const VideoBackground = ({ url }) => {
       <video className={styles['video__inner']} loop muted ref={videoRef}>
         <source src={url} type="video/mp4" />
       </video>
+
+      <div className={styles['video__shadow']}></div>
     </div>
   )
 }

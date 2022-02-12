@@ -1,0 +1,23 @@
+.typography-heading {
+  font-size: $text-6xl;
+  line-height: 8.5rem;
+  font-weight: 200;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+
+.typography-subheading {
+  font-size: $text-3xl;
+  font-weight: 200;
+}
+
+.typography-paragraph {
+  font-size: $text-base;
+  font-weight: normal;
+}
+
+.typography-small-text {
+  font-size: $text-sm;
+  font-weight: normal;
+}

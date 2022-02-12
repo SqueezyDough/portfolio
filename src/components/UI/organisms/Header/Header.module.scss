@@ -1,17 +1,30 @@
-.header {
-  position: absolute;
-  padding-top: $space-12;
+.header
+{
+    position: absolute;
+    z-index: 1;
+
+    width: 100%;
+    padding-top: $space-12;
+
+    text-align: center;
+
+    // mix-blend-mode: difference;
 }
 
-.header__logo {
-  font-size: $text-sm;
-  font-weight: $font-bold;
-  letter-spacing: 0.02rem;
-  text-transform: lowercase;
+.logo
+{
+    font-size: $text-sm;
+
+    letter-spacing: .02rem;
+    text-transform: lowercase;
+
+    color: $base-white;
 }
 
-@include screen($breakpoint-regular) {
-  .header__logo {
-    font-size: $text-lg;
-  }
+@include screen($breakpoint-regular)
+{
+    .logo
+    {
+        font-size: $text-lg;
+    }
 }

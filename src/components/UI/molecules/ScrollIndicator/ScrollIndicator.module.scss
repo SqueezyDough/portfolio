@@ -6,9 +6,8 @@
 }
 
 .label {
-  font-size: $text-sm;
-  font-weight: $font-bold;
-  letter-spacing: 0.02rem;
+  @extend .typography-small-text;
+
   text-transform: lowercase;
 }
 

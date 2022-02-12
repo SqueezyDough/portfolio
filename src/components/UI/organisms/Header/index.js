@@ -8,7 +8,7 @@ const Header = ({ title }) => {
     <header className="content">
       <nav className={classes}>
         <Link href="/">
-          <a className={styles['header__logo']}>{title}</a>
+          <a className={styles.logo}>{title}</a>
         </Link>
       </nav>
     </header>

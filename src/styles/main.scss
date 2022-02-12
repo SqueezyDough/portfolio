@@ -4,12 +4,13 @@ html {
   @include text-rendering;
 
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
   width: 100%;
 
-  color: $primary-violet;
+  color: $base-white;
   background: $base-black;
 
   font-family: $font-body;
@@ -17,12 +18,16 @@ body {
   font-weight: $font-regular;
 }
 
-.content {
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  max-width: $breakpoint-extra-wide;
+ul {
+  list-style-type: none;
 }
+
+// .content {
+//   width: 100%;
+//   margin: 0 auto;
+//   padding: 0;
+//   max-width: $breakpoint-wide;
+// }
 
 .content__inner {
   padding: $space-4;
