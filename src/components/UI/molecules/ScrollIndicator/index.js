@@ -1,9 +1,10 @@
 import { motion } from 'framer-motion'
 import ScrollIcon from '@/UI/atoms/ScrollIcon'
+import { isTouchDevice } from '@/utils/helpers'
 
 import styles from './ScrollIndicator.module.scss'
 
-const ScrollIndicator = ({ label = 'scroll' }) => {
+const ScrollIndicator = () => {
   return (
     <motion.div
       className={styles.container}
@@ -11,7 +12,11 @@ const ScrollIndicator = ({ label = 'scroll' }) => {
       animate={{ opacity: 1 }}
       transition={{ delay: 6 }}
     >
-      <span className={styles.label}>{label}</span>
+      {isTouchDevice() ? (
+        <span className={styles.label}>Swipe</span>
+      ) : (
+        <span className={styles.label}>Scroll</span>
+      )}
 
       <ScrollIcon />
     </motion.div>

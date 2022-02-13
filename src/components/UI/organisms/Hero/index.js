@@ -24,7 +24,7 @@ const Hero = ({ heading, images }) => {
           y: [400, 0, 0, 0],
           clipPath: ['circle(0%)', 'circle(20%)', 'circle(20%)', 'circle(100%)'],
         }}
-        transition={{ duration: 3.2, delay: 0.75, timings: [0, 0.5, 0.9, 1] }}
+        transition={{ duration: 3.2, delay: 0.75, times: [0, 0.3, 0.7, 1] }}
       >
         <ImageDistorted image={images[0]} />
         <div className={styles.canvasShadow} />
