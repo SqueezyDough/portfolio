@@ -24,16 +24,17 @@ const Hero = ({ heading, images }) => {
           y: [400, 0, 0, 0],
           clipPath: ['circle(0%)', 'circle(20%)', 'circle(20%)', 'circle(100%)'],
         }}
-        transition={{ duration: 4, delay: 0.75, timings: [0, 0.5, 0.9, 1] }}
+        transition={{ duration: 3.2, delay: 0.75, timings: [0, 0.5, 0.9, 1] }}
       >
         <ImageDistorted image={images[0]} />
+        <div className={styles.canvasShadow} />
       </motion.div>
 
       <motion.div
         className={styles.spheresContainer}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 2 }}
+        transition={{ delay: 2.25, duration: 2 }}
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>

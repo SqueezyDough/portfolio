@@ -3,12 +3,19 @@ import React, { Suspense, useRef, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { EffectComposer, DepthOfField, Bloom, Noise, Vignette } from '@react-three/postprocessing'
 import { Icosahedron, useTexture, useCubeTexture, MeshDistortMaterial } from '@react-three/drei'
+import { useViewportScroll, useTransform } from 'framer-motion'
 
 function MainSphere({ material }) {
   const main = useRef()
 
+  const { scrollY } = useViewportScroll()
+  const y = useTransform(scrollY, [0, 2400], [0, 3200])
+
   // main sphere rotates following the mouse position
   useFrame(({ clock, mouse }) => {
+    main.current.position.z = (y.current / 1000) * -0.75
+    main.current.position.y = (y.current / 1000) * -1
+
     main.current.rotation.z = clock.getElapsedTime() / 2
     main.current.rotation.y = THREE.MathUtils.lerp(main.current.rotation.y, mouse.x * Math.PI, 0.05)
     main.current.rotation.x = THREE.MathUtils.lerp(main.current.rotation.x, mouse.y * Math.PI, 0.05)
@@ -17,9 +24,7 @@ function MainSphere({ material }) {
 }
 
 function Instances({ material }) {
-  // we use this array ref to store the spheres after creating them
   const [sphereRefs] = useState(() => [])
-  // we use this array to initialize the background spheres
   const initialPositions = [
     [-4, 20, -12],
     [-10, 12, -4],
@@ -30,9 +35,8 @@ function Instances({ material }) {
     [14, -2, -23],
     [8, 10, -20],
   ]
-  // smaller spheres movement
+
   useFrame(() => {
-    // animate each sphere in the array
     sphereRefs.forEach((el) => {
       el.position.y += 0.02
       if (el.position.y > 19) el.position.y = -18
@@ -63,7 +67,6 @@ function Scene({ texture }) {
   const envMap = useCubeTexture(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], {
     path: '/cube/',
   })
-  // We use `useResource` to be able to delay rendering the spheres until the material is ready
   const [material, set] = useState()
 
   return (
@@ -78,7 +81,7 @@ function Scene({ texture }) {
         bumpScale={0.005}
         clearcoat={1}
         clearcoatRoughness={1}
-        radius={1}
+        radius={1.25}
         distort={0.25}
       />
       {material && <Instances material={material} />}
