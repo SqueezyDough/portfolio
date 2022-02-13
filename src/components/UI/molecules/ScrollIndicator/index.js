@@ -12,11 +12,10 @@ const ScrollIndicator = ({ label = 'scroll' }) => {
         className={styles.container}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 5 }}
+        transition={{ delay: 10 }}
       >
         <span className={styles.label}>{label}</span>
 
-        {/* TODO: replace with a swipe icon and label for mobile */}
         <ScrollIcon />
       </motion.div>
     </motion.div>

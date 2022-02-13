@@ -73,8 +73,8 @@ function Scene({ texture }) {
         envMap={envMap}
         bumpMap={bumpMap}
         color={'#010101'}
-        roughness={0.25}
-        metalness={3.2}
+        roughness={0.12}
+        metalness={3}
         bumpScale={0.005}
         clearcoat={1}
         clearcoatRoughness={1}

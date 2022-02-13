@@ -99,7 +99,7 @@
 
         transform: rotate(180deg);
 
-        opacity: .6;
+        opacity: .9;
     }
 }
 
@@ -137,5 +137,71 @@
     .wordWrapper
     {
         height: 8rem;
+    }
+
+    .footerContent
+    {
+        display: block;
+
+        padding: 1rem;
+
+        color: $base-grey;
+    }
+
+    .footerTitle
+    {
+        display: flex;
+        overflow: hidden;
+
+        height: 1.2rem;
+        margin-bottom: .5rem;
+
+        span
+        {
+            display: inline-block;
+
+            &:first-of-type
+            {
+                font-weight: $font-bold;
+
+                &::after
+                {
+                    display: inline-block;
+
+                    width: 4px;
+                    height: 4px;
+                    margin: 0 .5rem;
+
+                    content: ' ';
+                    vertical-align: middle;
+
+                    border-radius: 50%;
+                    background-color: $base-white;
+                }
+            }
+        }
+    }
+
+    .social
+    {
+        overflow: hidden;
+
+        height: 1.2rem;
+
+        a
+        {
+            display: inline-block;
+
+            transition: color .3s;
+            &:first-of-type
+            {
+                margin-right: 1rem;
+            }
+
+            &:hover
+            {
+                color: $base-white;
+            }
+        }
     }
 }

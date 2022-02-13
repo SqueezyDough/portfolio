@@ -7,13 +7,34 @@ import Spheres from '@/UI/molecules/Spheres'
 import styles from './Hero.module.scss'
 import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 
-const Hero = ({ title, images }) => {
-  const words = _.split(title, ' ')
+const Hero = ({ heading, images }) => {
+  const words = _.split(heading, ' ')
+
+  const containerVariants = {
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 4.5,
+        duration: 2,
+        staggerChildren: 0.1,
+        delayChildren: 5.5,
+      },
+    },
+    hidden: { opacity: 0 },
+  }
+
+  const childVariants = {
+    show: {
+      y: 0,
+    },
+    hidden: { y: '100%' },
+  }
 
   return (
     <section className={styles.container}>
       <motion.div
         className={styles.canvas}
+        initial={{ clipPath: 'circle(0%)' }}
         animate={{
           y: [400, 0, 0, 0],
           clipPath: ['circle(0%)', 'circle(20%)', 'circle(100%)'],
@@ -33,13 +54,15 @@ const Hero = ({ title, images }) => {
       </motion.div>
 
       <ParallaxContainer inputRange={500} outputRange={-100}>
-        <motion.h1 className={styles.title} animate={{ y: [50, 0] }}>
+        <motion.h1 className={styles.title} initial={{ y: 50 }} animate={{ y: 0 }}>
           {words.map((word, i) => (
             <div key={i} className={styles.wordWrapper}>
               <motion.span
                 className={styles.word}
-                animate={{ y: [200, 0] }}
-                transition={{ delay: i * 0.5 }}
+                initial="hidden"
+                animate="show"
+                variants={childVariants}
+                transition={{ delay: i * 0.3 }}
               >
                 {word}
               </motion.span>
@@ -50,18 +73,34 @@ const Hero = ({ title, images }) => {
 
       <footer className={styles.footer}>
         <ScrollIndicator />
-        <nav className={styles.footerContent}>
-          <h3 className={styles.footerTitle}>
-            <span>Designed & developer By</span>
-            <span>leroyvanbiljouw</span>
-          </h3>
-          <ul>
-            <li>
-              <a>Github</a>
-              <a>LinkedIn</a>
-            </li>
-          </ul>
-        </nav>
+
+        <motion.div className={styles.footerContent}>
+          <motion.h3
+            className={styles.footerTitle}
+            initial="hidden"
+            animate="show"
+            variants={containerVariants}
+            transition={{ duration: 1 }}
+          >
+            <motion.span variants={childVariants}>Designed & developed by</motion.span>
+            <motion.span variants={childVariants}>© leroyvanbiljouw</motion.span>
+          </motion.h3>
+
+          <motion.nav
+            className={styles.social}
+            initial="hidden"
+            animate="show"
+            variants={containerVariants}
+            transition={{ duration: 1 }}
+          >
+            <motion.a href="" variants={childVariants}>
+              Github
+            </motion.a>
+            <motion.a href="" variants={childVariants}>
+              LinkedIn
+            </motion.a>
+          </motion.nav>
+        </motion.div>
       </footer>
     </section>
   )

@@ -9,7 +9,7 @@ const Home = ({ data }) => {
 
   return (
     <>
-      <Hero title={hero_title} images={[background_vertex, background_shape]} />
+      <Hero heading={hero_title} images={[background_vertex, background_shape]} />
     </>
   )
 }
