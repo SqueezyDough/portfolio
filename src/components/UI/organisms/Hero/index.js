@@ -1,30 +1,13 @@
 import { motion } from 'framer-motion'
 import _ from 'lodash'
-// import { Canvas, useFrame } from '@react-three/fiber'
 import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
 import ImageDistorted from '@/UI/molecules/ImageDistorted'
 import Spheres from '@/UI/molecules/Spheres'
+import Footer from './components/Footer/index'
 import styles from './Hero.module.scss'
-import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 
 const Hero = ({ heading, images }) => {
   const words = _.split(heading, ' ')
-
-  const containerVariants = {
-    show: {
-      opacity: 1,
-      transition: {
-        delay: 4.5,
-        duration: 2,
-        staggerChildren: 0.1,
-        delayChildren: 5.5,
-        type: 'spring',
-        damping: 10,
-        stiffness: 100,
-      },
-    },
-    hidden: { opacity: 0 },
-  }
 
   const childVariants = {
     show: {
@@ -39,9 +22,9 @@ const Hero = ({ heading, images }) => {
         className={styles.canvas}
         animate={{
           y: [400, 0, 0, 0],
-          clipPath: ['circle(0% at 0% 0%)', 'circle(20%)', 'circle(100%)'],
+          clipPath: ['circle(0%)', 'circle(20%)', 'circle(20%)', 'circle(100%)'],
         }}
-        transition={{ duration: 5, delay: 1, timings: [0, 0.2, 0.9, 1] }}
+        transition={{ duration: 4, delay: 0.75, timings: [0, 0.5, 0.9, 1] }}
       >
         <ImageDistorted image={images[0]} />
       </motion.div>
@@ -50,7 +33,7 @@ const Hero = ({ heading, images }) => {
         className={styles.spheresContainer}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 5, duration: 2 }}
+        transition={{ delay: 3, duration: 2 }}
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>
@@ -64,7 +47,7 @@ const Hero = ({ heading, images }) => {
                 initial="hidden"
                 animate="show"
                 variants={childVariants}
-                transition={{ delay: i * 0.3 }}
+                transition={{ delay: i * 0.1, duration: 1 }}
               >
                 {word}
               </motion.span>
@@ -73,37 +56,7 @@ const Hero = ({ heading, images }) => {
         </motion.h1>
       </ParallaxContainer>
 
-      <footer className={styles.footer}>
-        <ScrollIndicator />
-
-        <motion.div className={styles.footerContent}>
-          <motion.h3
-            className={styles.footerTitle}
-            initial="hidden"
-            animate="show"
-            variants={containerVariants}
-            transition={{ duration: 1 }}
-          >
-            <motion.span variants={childVariants}>Designed & developed by</motion.span>
-            <motion.span variants={childVariants}>© leroyvanbiljouw</motion.span>
-          </motion.h3>
-
-          <motion.nav
-            className={styles.social}
-            initial="hidden"
-            animate="show"
-            variants={containerVariants}
-            transition={{ duration: 1 }}
-          >
-            <motion.a href="" variants={childVariants}>
-              Github
-            </motion.a>
-            <motion.a href="" variants={childVariants}>
-              LinkedIn
-            </motion.a>
-          </motion.nav>
-        </motion.div>
-      </footer>
+      <Footer />
     </section>
   )
 }

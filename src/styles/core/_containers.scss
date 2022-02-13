@@ -1,0 +1,22 @@
+.mainContainer,
+.secondaryContainer
+{
+    width: 90%;
+    max-width: 332px;
+    margin: 0 auto;
+}
+
+@include screen($breakpoint-regular)
+{
+    .mainContainer
+    {
+        width: 80%;
+        max-width: 1200px;
+    }
+
+    .secondaryContainer
+    {
+        width: 75%;
+        max-width: 1000px;
+    }
+}

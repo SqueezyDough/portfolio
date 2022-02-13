@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import styles from './Header.module.scss'
 
 const Header = ({ title }) => {
@@ -6,11 +7,16 @@ const Header = ({ title }) => {
 
   return (
     <header className="content">
-      <nav className={classes}>
+      <motion.nav
+        className={classes}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
         <Link href="/">
           <a className={styles.logo}>{title}</a>
         </Link>
-      </nav>
+      </motion.nav>
     </header>
   )
 }

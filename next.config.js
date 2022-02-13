@@ -4,6 +4,7 @@ const defaultSassOptions = {
   prependData: `
       @import "styles/core/mixins.scss";
       @import "styles/core/breakpoints.scss";
+      @import "styles/core/containers.scss";
       @import "styles/core/fonts.scss";
       @import "styles/core/typography.scss";
       @import "styles/core/spacings.scss";
