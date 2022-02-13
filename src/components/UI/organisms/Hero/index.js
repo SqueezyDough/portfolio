@@ -27,14 +27,20 @@ const Hero = ({ heading, images }) => {
         transition={{ duration: 3.2, delay: 0.75, times: [0, 0.3, 0.7, 1] }}
       >
         <ImageDistorted image={images[0]} />
-        <div className={styles.canvasShadow} />
       </motion.div>
+
+      <motion.div
+        className={styles.canvasShadow}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 3.42 }}
+      />
 
       <motion.div
         className={styles.spheresContainer}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.25, duration: 2 }}
+        transition={{ delay: 2.8, duration: 2 }}
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>
