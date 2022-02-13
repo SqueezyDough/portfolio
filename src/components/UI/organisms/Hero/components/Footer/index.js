@@ -31,8 +31,6 @@ const Footer = () => {
 
   return (
     <motion.footer className={styles.footer} animate={offset > 0 ? { opacity: 0 } : { opacity: 1 }}>
-      <ScrollIndicator />
-
       <div className={styles.footerContent}>
         <motion.h3
           className={styles.footerTitle}
@@ -60,6 +58,8 @@ const Footer = () => {
           </motion.a>
         </motion.nav>
       </div>
+
+      <ScrollIndicator />
     </motion.footer>
   )
 }

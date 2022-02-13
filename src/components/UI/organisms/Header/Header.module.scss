@@ -4,7 +4,7 @@
     z-index: 1;
 
     width: 100%;
-    padding-top: $space-12;
+    padding-top: 5rem;
 
     mix-blend-mode: difference;
 }
@@ -13,19 +13,18 @@
 {
     font-size: $text-sm;
 
+    display: block;
+
     letter-spacing: .02rem;
     text-transform: lowercase;
 
     color: $base-white;
+
+    @extend .secondaryContainer;
 }
 
 @include screen($breakpoint-regular)
 {
-    .header
-    {
-        text-align: center;
-    }
-
     .logo
     {
         font-size: $text-lg;

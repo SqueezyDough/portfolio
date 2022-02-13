@@ -4,14 +4,14 @@ import Layout from '@/components/templates/Layout'
 import Home from '@/components/templates/Home'
 
 const Index = ({ data }) => {
-  const logo = 'leroyvanbiljouw'
+  const text = 'leroyvanbiljouw'
   const seo = {
     seo_title: 'Leroyvanbiljouw - Portfolio',
     seo_description: 'Homepage',
   }
 
   return (
-    <Layout title={logo} seo={seo}>
+    <Layout text={text} seo={seo}>
       <Home data={data} />
     </Layout>
   )

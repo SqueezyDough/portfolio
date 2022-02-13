@@ -2,14 +2,13 @@ import SEO from '@/components/seo'
 import Header from '@/UI/organisms/Header'
 // import Footer from '@/UI/organisms/Footer'
 
-const Layout = ({ children, seo, ...props }) => {
+const Layout = ({ children, seo, text, ...props }) => {
   const { seo_title, seo_description } = seo
-  const { title } = props
 
   return (
     <>
       <SEO seo_title={seo_title} seo_description={seo_description} />
-      <Header title={title} />
+      <Header text={text} />
       <main {...props}>{children}</main>
       {/* <Footer /> */}
     </>
