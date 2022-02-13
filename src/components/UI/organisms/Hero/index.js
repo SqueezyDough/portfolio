@@ -18,6 +18,9 @@ const Hero = ({ heading, images }) => {
         duration: 2,
         staggerChildren: 0.1,
         delayChildren: 5.5,
+        type: 'spring',
+        damping: 10,
+        stiffness: 100,
       },
     },
     hidden: { opacity: 0 },
@@ -27,17 +30,16 @@ const Hero = ({ heading, images }) => {
     show: {
       y: 0,
     },
-    hidden: { y: '100%' },
+    hidden: { y: '200%' },
   }
 
   return (
     <section className={styles.container}>
       <motion.div
         className={styles.canvas}
-        initial={{ clipPath: 'circle(0%)' }}
         animate={{
           y: [400, 0, 0, 0],
-          clipPath: ['circle(0%)', 'circle(20%)', 'circle(100%)'],
+          clipPath: ['circle(0% at 0% 0%)', 'circle(20%)', 'circle(100%)'],
         }}
         transition={{ duration: 5, delay: 1, timings: [0, 0.2, 0.9, 1] }}
       >
@@ -48,7 +50,7 @@ const Hero = ({ heading, images }) => {
         className={styles.spheresContainer}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 5 }}
+        transition={{ delay: 5, duration: 2 }}
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>
