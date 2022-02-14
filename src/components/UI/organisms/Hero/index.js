@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import _ from 'lodash'
 import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
 import ImageDistorted from '@/UI/molecules/ImageDistorted'
@@ -16,6 +16,12 @@ const Hero = ({ heading, images }) => {
     hidden: { y: '200%' },
   }
 
+  const shadowAnimation = useAnimation()
+
+  const onAnimationComplete = (next, payload) => {
+    next.start(payload)
+  }
+
   return (
     <section className={styles.container}>
       <motion.div
@@ -25,16 +31,10 @@ const Hero = ({ heading, images }) => {
           clipPath: ['circle(0%)', 'circle(20%)', 'circle(20%)', 'circle(100%)'],
         }}
         transition={{ duration: 3.2, delay: 0.75, times: [0, 0.3, 0.7, 1] }}
+        onAnimationComplete={() => onAnimationComplete(shadowAnimation, { opacity: 1 })}
       >
         <ImageDistorted image={images[0]} />
       </motion.div>
-
-      <motion.div
-        className={styles.canvasShadow}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3.42 }}
-      />
 
       <motion.div
         className={styles.spheresContainer}
@@ -44,6 +44,12 @@ const Hero = ({ heading, images }) => {
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>
+
+      <motion.div
+        className={styles.canvasShadow}
+        initial={{ opacity: 0 }}
+        animate={shadowAnimation}
+      />
 
       <ParallaxContainer inputRange={500} outputRange={-100}>
         <motion.h1 className={styles.title} initial={{ y: 50 }} animate={{ y: 0 }}>
