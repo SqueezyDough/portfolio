@@ -16,10 +16,19 @@ const Hero = ({ heading, images }) => {
     hidden: { y: '200%' },
   }
 
+  const sphereAnimation = useAnimation()
   const shadowAnimation = useAnimation()
 
-  const onAnimationComplete = (next, animation) => {
+  const setNextAnimation = (next, animation) => {
     next.start(animation)
+  }
+
+  function setSphereAnimation(latest) {
+    const value = latest.clipPath.replace(/[^\d.-]/g, '')
+
+    if (value == 20) {
+      setNextAnimation(sphereAnimation, { opacity: 1 })
+    }
   }
 
   return (
@@ -31,7 +40,8 @@ const Hero = ({ heading, images }) => {
           clipPath: ['circle(0%)', 'circle(20%)', 'circle(20%)', 'circle(100%)'],
         }}
         transition={{ duration: 3.2, delay: 0.75, times: [0, 0.3, 0.7, 1] }}
-        onAnimationComplete={() => onAnimationComplete(shadowAnimation, { opacity: 1 })}
+        onUpdate={setSphereAnimation}
+        onAnimationComplete={() => setNextAnimation(shadowAnimation, { opacity: 1 })}
       >
         <ImageDistorted image={images[0]} />
       </motion.div>
@@ -39,8 +49,8 @@ const Hero = ({ heading, images }) => {
       <motion.div
         className={styles.spheresContainer}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.8, duration: 2 }}
+        animate={sphereAnimation}
+        transition={{ duration: 2, delay: 1 }}
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>
