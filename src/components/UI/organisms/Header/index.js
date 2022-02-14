@@ -9,9 +9,9 @@ const Header = ({ text }) => {
     <header className="content">
       <motion.nav
         className={classes}
-        initial={{ y: -120 }}
-        animate={{ y: 0 }}
-        transition={{ delay: 1, duration: 0.5 }}
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ type: 'spring', delay: 1.1, duration: 1 }}
       >
         <Link href="/">
           <a className={styles.logo}>{text}</a>
