@@ -1,10 +1,13 @@
+import { useContext } from 'react'
 import { motion } from 'framer-motion'
 import styles from './Footer.module.scss'
 import ScrollIndicator from '@/UI/molecules/ScrollIndicator'
 import useWindowOffset from '@/hooks/useWindowOffset'
+import { MouseContext } from '@/context/mouseContext'
 
 const Footer = () => {
   const offset = useWindowOffset()
+  const { cursorChangeHandler } = useContext(MouseContext)
 
   const containerVariants = {
     show: {
@@ -50,10 +53,20 @@ const Footer = () => {
           variants={containerVariants}
           transition={{ duration: 1 }}
         >
-          <motion.a href="" variants={childVariants}>
+          <motion.a
+            href=""
+            variants={childVariants}
+            onMouseEnter={() => cursorChangeHandler('hovered')}
+            onMouseLeave={() => cursorChangeHandler('')}
+          >
             Github
           </motion.a>
-          <motion.a href="" variants={childVariants}>
+          <motion.a
+            href=""
+            variants={childVariants}
+            onMouseEnter={() => cursorChangeHandler('hovered')}
+            onMouseLeave={() => cursorChangeHandler('')}
+          >
             LinkedIn
           </motion.a>
         </motion.nav>

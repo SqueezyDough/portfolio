@@ -12,14 +12,8 @@
 
     text-transform: lowercase;
 
+    color: $base-grey;
+
     mix-blend-mode: difference;
     @extend .typography-small-text;
-}
-
-@include screen($breakpoint-regular)
-{
-    .label
-    {
-        font-size: $text-lg;
-    }
 }

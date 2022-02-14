@@ -9,6 +9,7 @@
       "@/utils/*": ["utils/*"],
       "@/images/*": ["components/assets/images/*"],
       "@/hooks/*": ["components/hooks/*"],
+      "@/context/*": ["components/context/*"],
       "@/ease": ["components/modules/customEasing"]
     }
   }

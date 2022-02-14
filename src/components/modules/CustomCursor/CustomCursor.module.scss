@@ -1,0 +1,35 @@
+.dot,
+.outline
+{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    opacity: 1;
+    border-radius: 50%;
+}
+
+.dot
+{
+    width: 8px;
+    height: 8px;
+
+    background-color: $base-white;
+
+    mix-blend-mode: difference;
+}
+
+.outline
+{
+    width: 32px;
+    height: 32px;
+
+    opacity: .15;
+    border: 1px solid $base-white;
+
+    mix-blend-mode: difference;
+}
