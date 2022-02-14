@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import _ from 'lodash'
 import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
@@ -6,24 +7,41 @@ import Spheres from '@/UI/molecules/Spheres'
 import Footer from './components/Footer/index'
 import styles from './Hero.module.scss'
 
-const Hero = ({ heading, images }) => {
-  const words = _.split(heading, ' ')
+const childVariants = {
+  show: {
+    y: 0,
+  },
+  hidden: { y: '200%' },
+}
 
-  const childVariants = {
-    show: {
-      y: 0,
-    },
-    hidden: { y: '200%' },
-  }
+const Hero = ({ heading, images }) => {
+  console.log('render')
+
+  const words = _.split(heading, ' ')
 
   const sphereAnimation = useAnimation()
   const shadowAnimation = useAnimation()
+
+  const [isScrollable, setIsScrollable] = useState(false)
+
+  // TODO: use a context to unlock scroll
+  const unlockScroll = () => {
+    document?.body.classList.add('window-is-scrollable')
+  }
+
+  if (isScrollable) {
+    unlockScroll()
+  }
+
+  const onAnimationsComplete = () => {
+    setIsScrollable(true)
+  }
 
   const setNextAnimation = (next, animation) => {
     next.start(animation)
   }
 
-  function setSphereAnimation(latest) {
+  const setSphereAnimation = (latest) => {
     const value = latest.clipPath.replace(/[^\d.-]/g, '')
 
     if (value == 20) {
@@ -51,6 +69,7 @@ const Hero = ({ heading, images }) => {
         initial={{ opacity: 0 }}
         animate={sphereAnimation}
         transition={{ duration: 2, delay: 1 }}
+        onAnimationComplete={onAnimationsComplete}
       >
         <Spheres className={styles.spheres} texture={images[1]} />
       </motion.div>

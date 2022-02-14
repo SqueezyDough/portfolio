@@ -19,10 +19,18 @@ body
     font-size: $text-base;
     font-weight: $font-regular;
 
+    overflow: hidden;
+
     width: 100%;
+    min-height: 100vh;
 
     color: $base-white;
     background: $base-black;
+
+    &.window-is-scrollable
+    {
+        overflow: visible;
+    }
 }
 
 ul
