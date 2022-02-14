@@ -18,8 +18,8 @@ const Hero = ({ heading, images }) => {
 
   const shadowAnimation = useAnimation()
 
-  const onAnimationComplete = (next, payload) => {
-    next.start(payload)
+  const onAnimationComplete = (next, animation) => {
+    next.start(animation)
   }
 
   return (
