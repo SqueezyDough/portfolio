@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import _ from 'lodash'
 import ParallaxContainer from '@/UI/molecules/ParallaxContainer'
@@ -15,26 +14,13 @@ const childVariants = {
 }
 
 const Hero = ({ heading, images }) => {
-  console.log('render')
-
   const words = _.split(heading, ' ')
 
   const sphereAnimation = useAnimation()
   const shadowAnimation = useAnimation()
 
-  const [isScrollable, setIsScrollable] = useState(false)
-
-  // TODO: use a context to unlock scroll
-  const unlockScroll = () => {
-    document?.body.classList.add('window-is-scrollable')
-  }
-
-  if (isScrollable) {
-    unlockScroll()
-  }
-
   const onAnimationsComplete = () => {
-    setIsScrollable(true)
+    document?.body.classList.add('window-is-scrollable')
   }
 
   const setNextAnimation = (next, animation) => {

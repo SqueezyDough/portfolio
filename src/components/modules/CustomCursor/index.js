@@ -52,13 +52,13 @@ const CustomCursor = () => {
   if (isTouchDevice()) return
 
   const moveDot = (e) => {
-    dotX.set(e.clientX)
-    dotY.set(e.clientY)
+    dotX.set(e.pageX)
+    dotY.set(e.pageY)
   }
 
   const moveOutline = (e) => {
-    outlineX.set(e.clientX)
-    outlineY.set(e.clientY)
+    outlineX.set(e.pageX)
+    outlineY.set(e.pageY)
   }
 
   const addEventListeners = () => {

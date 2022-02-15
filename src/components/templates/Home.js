@@ -1,4 +1,5 @@
 import Hero from '@/UI/organisms/Hero'
+import Introduction from '@/UI/organisms/Introduction'
 
 const Home = ({ data }) => {
   const {
@@ -10,6 +11,7 @@ const Home = ({ data }) => {
   return (
     <>
       <Hero heading={hero_title} images={[background_vertex, background_shape]} />
+      <Introduction />
     </>
   )
 }
