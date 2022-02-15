@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react'
 import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { MouseContext } from '@/context/mouseContext'
-import { isTouchDevice } from '@/utils/helpers'
+// import { isTouchDevice } from '@/utils/helpers'
 import styles from './CustomCursor.module.scss'
 
 const outlineVariants = {
@@ -49,7 +49,7 @@ const CustomCursor = () => {
     }
   })
 
-  if (isTouchDevice()) return
+  //   if (isTouchDevice()) return
 
   const moveDot = (e) => {
     dotX.set(e.pageX)

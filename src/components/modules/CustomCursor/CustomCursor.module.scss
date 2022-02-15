@@ -6,6 +6,8 @@
     top: 50%;
     left: 50%;
 
+    display: none;
+
     transform: translate(-50%, -50%);
     pointer-events: none;
 
@@ -32,4 +34,13 @@
     border: 1px solid $base-white;
 
     mix-blend-mode: difference;
+}
+
+@include screen($breakpoint-regular)
+{
+    .dot,
+    .outline
+    {
+        display: block;
+    }
 }
